@@ -25,16 +25,11 @@
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-lock</v-icon>
           </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1">
-            登录
-          </v-list-item-title>
-        </v-list-item>
-        <v-list-item class="mt-4" @click="isShowLoginForm = true">
-          <v-list-item-action>
-            <v-icon color="grey darken-1">mdi-lock</v-icon>
-          </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1">
+          <v-list-item-title v-if="$store.state.auth.user" class="grey--text text--darken-1">
             {{ $store.state.auth.user.username }}
+          </v-list-item-title>
+          <v-list-item-title v-else class="grey--text text--darken-1">
+            登录
           </v-list-item-title>
         </v-list-item>
         <v-list-item link>
